@@ -1,0 +1,176 @@
+
+/* - - - - - - - - - - || GENERAL || - - - - - - - - - - */
+.row
+{
+    margin: 0;
+    padding: 0;
+}
+
+/* - - - - - - - - - - || COLUMN #001 && ABOUT BLOCK || - - - - - - - - - - */
+.column_001
+{
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    color: #212121;
+    background: #FFFFFF;
+
+    display: flex;
+    align-items: center;
+    justify-content: end;
+}
+
+.about_block
+{
+    width: 65%;
+    height: 500px;
+    padding: 30px;
+
+    border-top-left-radius: 16px;
+    border-top: solid 2px #212121;
+    border-bottom-left-radius: 16px;
+    border-left: solid 2px #212121;
+    border-bottom: solid 2px #212121;
+}
+
+/* - - - - - - - - - - || COLUMN #002 && TASK BLOCK || - - - - - - - - - - */
+.column_002
+{
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    color: #FFFFFF;
+    background: #212121;
+
+    display: flex;
+    align-items: center;
+    justify-content: start;
+}
+
+.task_block
+{
+    width: 80%;
+    height: 500px;
+    padding: 30px;
+
+    border-top-right-radius: 16px;
+    border-top: solid 2px #FFFFFF;
+    border-bottom-right-radius: 16px;
+    border-right: solid 2px #FFFFFF;
+    border-bottom: solid 2px #FFFFFF;
+}
+
+/* - - - - - - - - - - || SET TASK || - - - - - - - - - - */
+.add_container
+{
+    display: flex;
+    margin-top: 30px;
+    justify-content: space-between;
+}
+
+#add_input
+{
+    width: 75%;
+    height: 40px;
+    border: none;
+    border-top-left-radius: 50px;
+    border-bottom-left-radius: 50px;
+}
+
+#add_btn
+{
+    width: 25%;
+    height: 40px;
+    border: none;
+    color: #212121;
+    font-weight: bolder;
+    background: #CFFF46;
+    border-top-right-radius: 50px;
+    border-bottom-right-radius: 50px;
+}
+
+#add_btn:hover
+{
+    transition: .5s;
+    color: #FFFFFF;
+    background: #616161;
+}
+
+/* - - - - - - - - - - || GET TASK || - - - - - - - - - - */
+#task_container
+{
+    width: 100%;
+    height: 240px;
+    margin-top: 30px;
+    overflow-y: scroll;
+}
+
+.task
+{
+    width: 100%;
+    display: flex;
+    padding: 10px;
+    color: #212121;
+    align-items: center;
+    border-radius: 50px;
+    flex-direction: row;
+    margin-bottom: 20px;
+    background: #FFFFFF;
+    justify-content: space-between;
+}
+
+.task span
+{
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+}
+
+.task span p
+{
+    margin: 0 0 0 15px;
+}
+
+/* - - - - - || SCROLLBAR || - - - - - */
+::-webkit-scrollbar
+{
+    width: 10px;
+}
+
+::-webkit-scrollbar-track
+{
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb
+{
+    background: #888;
+}
+
+::-webkit-scrollbar-thumb:hover
+{
+    background: #555;
+}
+
+/* - - - - - || CHECKBOX && DELETE || - - - - - */
+#task_checker
+{
+    font-size: 25px;
+}
+
+#task_checker:hover
+{
+    cursor: pointer;
+}
+
+#delete_btn
+{
+    font-size: 25px;
+}
+
+#delete_btn:hover
+{
+    cursor: pointer;
+    transition: .5s;
+    color: #616161;
+}
