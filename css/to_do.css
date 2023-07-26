@@ -22,7 +22,7 @@
 
 .about_block
 {
-    width: 65%;
+    width: 80%;
     height: 500px;
     padding: 30px;
 
@@ -31,6 +31,24 @@
     border-bottom-left-radius: 16px;
     border-left: solid 2px #212121;
     border-bottom: solid 2px #212121;
+
+    display: flex;
+    justify-content: end;
+    flex-direction: column;
+}
+
+.about_block h2
+{
+    font-size: 20px;
+    color: #212121;
+    font-weight: bolder;
+}
+
+.about_block h2 span
+{
+    font-size: 60px;
+    color: #212121;
+    font-weight: bolder;
 }
 
 /* - - - - - - - - - - || COLUMN #002 && TASK BLOCK || - - - - - - - - - - */
@@ -58,6 +76,18 @@
     border-bottom-right-radius: 16px;
     border-right: solid 2px #FFFFFF;
     border-bottom: solid 2px #FFFFFF;
+}
+
+.task_header
+{
+    display: flex;
+    align-self: center;
+    justify-content: space-between;
+}
+
+.count_text
+{
+    font-weight: bolder;
 }
 
 /* - - - - - - - - - - || SET TASK || - - - - - - - - - - */
@@ -115,6 +145,7 @@
     border-radius: 50px;
     flex-direction: row;
     margin-bottom: 20px;
+    font-weight: bolder;
     background: #FFFFFF;
     justify-content: space-between;
 }
@@ -131,15 +162,25 @@
     margin: 0 0 0 15px;
 }
 
+.checked_task
+{
+    width: 100%;
+    display: flex;
+    padding: 10px;
+    color: #212121;
+    align-items: center;
+    border-radius: 50px;
+    flex-direction: row;
+    margin-bottom: 20px;
+    font-weight: bolder;
+    background: #CFFF46;
+    justify-content: space-between;
+}
+
 /* - - - - - || SCROLLBAR || - - - - - */
 ::-webkit-scrollbar
 {
     width: 10px;
-}
-
-::-webkit-scrollbar-track
-{
-    background: #f1f1f1;
 }
 
 ::-webkit-scrollbar-thumb

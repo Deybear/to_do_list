@@ -27,25 +27,38 @@
         <div class="row">
 
             <!-- Column #001 // About Block -->
-            <div class="col-md-4 column_001">
+            <div class="col-md-6 column_001">
 
                 <!-- About Block -->
                 <div class="about_block">
 
-                    <h2>DEYBEAR'S LIST</h2>
+                    <h2>DEYBEAR'S<br><span>TO DO LIST</span></h2>
+
+                    <p>Instructions</p>
+                    <ol>
+                        <li>First add a new task to te list</li>
+                        <li>Press a task to mark it as complete</li>
+                        <li>Press the (-) icon to delete a task</li>
+                        <li>Press clear to delete all tasks</li>
+                    </ol>
 
                 </div>
 
             </div>
 
             <!-- Column #002 // Task Block -->
-            <div class="col-md-8 column_002">
+            <div class="col-md-6 column_002">
 
                 <!-- Task Block -->
                 <div class="task_block">
 
                     <!-- Title -->
-                    <h5>TO DO</h5>
+                    <div class="task_header">
+
+                        <h5>TO DO</h5>
+                        <h5 class="count_text">DONE (<span id="counter">0</span>)</h5>
+                    
+                    </div>
 
                     <!-- Add Container -->
                     <div class="add_container">
