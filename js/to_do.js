@@ -95,31 +95,38 @@ function decreaseCounter()
     counter.textContent = doneTask;
 }
 
-/* - - - - - - - - - -  CLICK EVENT  - - - - - - - - - - */
-function checkTask() {
-    taskContainer.addEventListener("click", function (event) {
-      const target = event.target;
+/* - - - - - - - - - - || CLICK EVENT || - - - - - - - - - - */
+function checkTask() 
+{
+    taskContainer.addEventListener("click", function (event) 
+    {
+        const target = event.target;
         console.log(target);
-      // Check if the click is on the checkbox icon
-      if (target.classList.contains("task_checker")) {
-        const checkbox = target;
-        const value = parseInt(checkbox.getAttribute("value"));
-        console.log(value);
-  
-        if (value === 0) {
-          increaseCounter();
-          checkbox.textContent = "radio_button_checked";
-          checkbox.setAttribute("value", "1");
-          checkbox.closest(".task").classList.add("checked_task");
-        } else {
-          decreaseCounter();
-          checkbox.textContent = "radio_button_unchecked";
-          checkbox.setAttribute("value", "0");
-          checkbox.closest(".task").classList.remove("checked_task");
+
+        // Check if the click is on the checkbox icon
+        if (target.classList.contains("task_checker")) 
+        {
+            const checkbox = target;
+            const value = parseInt(checkbox.getAttribute("value"));
+            console.log(value);
+
+            if (value === 0) 
+            {
+                increaseCounter();
+                checkbox.textContent = "radio_button_checked";
+                checkbox.setAttribute("value", "1");
+                checkbox.closest(".task").classList.add("checked_task");
+            }
+            else
+            {
+                decreaseCounter();
+                checkbox.textContent = "radio_button_unchecked";
+                checkbox.setAttribute("value", "0");
+                checkbox.closest(".task").classList.remove("checked_task");
+            }
         }
-      }
     });
-  }
+}
 
 /* - - - - - - - - - - || DELETE EVENT || - - - - - - - - - - */
 function deleteTask()
