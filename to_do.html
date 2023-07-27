@@ -11,6 +11,9 @@
     <!-- Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
     
+    <!-- MomentJS -->
+    <script src="https://momentjs.com/downloads/moment.min.js"></script>
+
     <!-- CSS -->
     <link rel="stylesheet" href="css/to_do.css">
 
@@ -32,15 +35,73 @@
                 <!-- About Block -->
                 <div class="about_block">
 
-                    <h2>DEYBEAR'S<br><span>TO DO LIST</span></h2>
+                    <!-- About Icon -->
+                    <div><i class="material-icons">notes</i></div>
 
-                    <p>Instructions</p>
-                    <ol>
-                        <li>First add a new task to te list</li>
-                        <li>Press a task to mark it as complete</li>
-                        <li>Press the (-) icon to delete a task</li>
-                        <li>Press clear to delete all tasks</li>
-                    </ol>
+                    <!-- About Content -->
+                    <div class="about_content">
+
+                        <!-- About Title -->
+                        <p class="main_text">
+                            
+                            <!-- <div> Icon -->
+                            <span class="main_icon">
+                                
+                                <!-- (<) Icon && (>) Icon -->
+                                <iconify-icon icon="ep:arrow-left"></iconify-icon>div<iconify-icon icon="ep:arrow-right"></iconify-icon>
+
+                            </span>
+
+                            <!-- First Text -->
+                            <span class="title_text_v1">DEYBEAR</span><br>
+
+                            <!-- Second Text -->
+                            <span class="title_text_v2">DEYBEAR</span>
+
+                            <!-- <div> Icon -->
+                            <span class="main_icon">
+                                
+                                <!-- (<) Icon && (>) Icon -->
+                                <iconify-icon icon="ep:arrow-left"></iconify-icon>/div<iconify-icon icon="ep:arrow-right"></iconify-icon>
+
+                            </span>
+
+
+                        </p>
+
+                        <!-- <i class="material-icons">catching_pokemon</i> -->
+
+                        <!-- Current Date -->
+                        <div><span id="current_day"></span><span id="current_date"></span></div>
+
+                        <!-- Task Status -->
+                        <div class="row status_container">
+
+                            <!-- Created Status -->
+                            <div class="col-sm-12 col-md-12 col-lg-6 status_block">
+
+                                <!-- Status Icon -->
+                                <i class="material-icons">add_circle</i>
+
+                                <!-- Status Number -->
+                                <div><p>Created</p><span>0</span></div>
+
+                            </div>
+
+                            <!-- Completed Status -->
+                            <div class="col-sm-12 col-md-12 col-lg-6 status_block">
+
+                                <!-- Status Icon -->
+                                <i class="material-icons">check_circle</i>
+
+                                <!-- Status Number -->
+                                <div><p>Completed</p><span id="counter">0</span></div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
 
                 </div>
 
@@ -52,27 +113,30 @@
                 <!-- Task Block -->
                 <div class="task_block">
 
-                    <!-- Title -->
-                    <div class="task_header">
-
-                        <h5>TO DO</h5>
-                        <h5 class="count_text">DONE (<span id="counter">0</span>)</h5>
-                    
-                    </div>
-
                     <!-- Add Container -->
                     <div class="add_container">
 
                         <!-- Task Input -->
-                        <input id="add_input" type="text">
+                        <input id="add_input" type="text" placeholder="Add new task">
 
-                        <!-- Task Button -->
+                        <!-- Task Buttom -->
                         <button id="add_btn" type="button" onclick="addTask();">+Add</button>
 
                     </div>
 
                     <!-- Task Container -->
                     <div id="task_container"></div>
+
+                    <!-- Clean Buttom -->
+                    <div id="clean_btn" class="col-sm-12 col-md-12 col-lg-12">
+
+                        <!-- Status Icon -->
+                        <i class="material-icons">remove_circle</i>
+
+                        <!-- Status Number -->
+                        <div><p>Clean</p></div>
+
+                    </div>
 
                 </div>
 
@@ -82,7 +146,12 @@
 
     </main>
 
+    <!-- JavaScript -->
     <script src="js/to_do.js"></script>
+    <script src="js/time.js"></script>
+
+    <!-- Iconofy -->
+    <script src="https://code.iconify.design/iconify-icon/1.0.8/iconify-icon.min.js"></script>
     
 </body>
 

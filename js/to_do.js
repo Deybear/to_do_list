@@ -95,45 +95,31 @@ function decreaseCounter()
     counter.textContent = doneTask;
 }
 
-/* - - - - - - - - - - || CHECK EVENT || - - - - - - - - - - */
-function checkTask(createDiv)
-{
-    // Get last element from container . . .
-    const getIconCheck = taskContainer.lastElementChild;
-
-    // Get icon by class . . .
-    const checkBtn = getIconCheck.querySelector(".task_checker");
-
-    // Check function . . .
-    checkBtn.addEventListener("click", function()
-    {
-        //Change value to int . . .
-        var value = parseInt(checkBtn.value);
-
-        //Click checker . . .
-        if (value == 0)
-        {
-            increaseCounter();
-            createDiv.classList.remove("task");
-            createDiv.classList.add("checked_task");
-            checkBtn.textContent = "radio_button_checked";
-
-            //Change value . . .
-            checkBtn.value = 1;
-        } 
-        else
-        {
-            decreaseCounter();
-            createDiv.classList.remove("checked_task");
-            createDiv.classList.add("task");
-            checkBtn.textContent = "radio_button_unchecked";
-
-            //Change value . . .
-            checkBtn.value = 0;
+/* - - - - - - - - - -  CLICK EVENT  - - - - - - - - - - */
+function checkTask() {
+    taskContainer.addEventListener("click", function (event) {
+      const target = event.target;
+        console.log(target);
+      // Check if the click is on the checkbox icon
+      if (target.classList.contains("task_checker")) {
+        const checkbox = target;
+        const value = parseInt(checkbox.getAttribute("value"));
+        console.log(value);
+  
+        if (value === 0) {
+          increaseCounter();
+          checkbox.textContent = "radio_button_checked";
+          checkbox.setAttribute("value", "1");
+          checkbox.closest(".task").classList.add("checked_task");
+        } else {
+          decreaseCounter();
+          checkbox.textContent = "radio_button_unchecked";
+          checkbox.setAttribute("value", "0");
+          checkbox.closest(".task").classList.remove("checked_task");
         }
-        
+      }
     });
-}
+  }
 
 /* - - - - - - - - - - || DELETE EVENT || - - - - - - - - - - */
 function deleteTask()
