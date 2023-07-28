@@ -10,9 +10,17 @@ var addInput = document.getElementById("add_input");
 // Calling add button . . .
 var addBtn = document.getElementById("add_btn");
 
-// Calling add button . . .
-var counter = document.getElementById("counter");
+// Calling clean button . . .
+var cleanBtn = document.getElementById("clean_btn");
+
+// Calling counter . . .
+var madeCounter = document.getElementById("made_counter");
+var doneCounter = document.getElementById("done_counter");
+
+var madetask = 0;
 var doneTask = 0;
+
+checkTask();
 
 /* - - - - - - - - - - || CLICK EVENT || - - - - - - - - - - */
 function addTask()
@@ -47,13 +55,16 @@ function addTask()
         /* - - - - - - - - - - || P ELEMENTS || - - - - - - - - - - */
 
         // Creating task (p) . . .
-        const createP = document.createElement("p");
+        const createText = document.createElement("p");
+        const createHour = document.createElement("p");
 
         // Adding (p) to (span) . . .
-        createSpan.appendChild(createP);
+        createSpan.appendChild(createText);
+        createSpan.appendChild(createHour);
 
         // Adding text to paragraph . . .
-        createP.innerHTML = addInput.value;
+        createText.innerHTML = addInput.value;
+        createHour.innerHTML = moment().format('LT');
         
         /* - - - - - - - - - - || CONTAINER || - - - - - - - - - - */
 
@@ -62,8 +73,15 @@ function addTask()
 
         // Adding syle to task . . .
         createDiv.classList.add("task");
+        createHour.classList.add("task_time");
 
-        checkTask(createDiv);
+        // Hide background image . . .
+        taskContainer.style.background = "none";
+
+        // Increase counter . . .
+        increaseMadeCounter();
+
+        // Delete task function . . .
         deleteTask();
     }
 
@@ -71,16 +89,25 @@ function addTask()
 }
 
 /* - - - - - - - - - - || COUNTER EVENT || - - - - - - - - - - */
-function increaseCounter()
+function increaseMadeCounter()
+{
+    // Increase counter . . .
+    madetask++;
+
+    // Add counter to HTML . . .
+    madeCounter.textContent = madetask;
+}
+
+function increaseDoneCounter()
 {
     // Increase counter . . .
     doneTask++;
 
     // Add counter to HTML . . .
-    counter.textContent = doneTask;
+    doneCounter.textContent = doneTask;
 }
 
-function decreaseCounter()
+function decreseDoneCounter()
 {
     // Decrease counter . . .
     doneTask--;
@@ -92,34 +119,34 @@ function decreaseCounter()
     }
 
     // Add counter to HTML . . .
-    counter.textContent = doneTask;
+    doneCounter.textContent = doneTask;
 }
 
-/* - - - - - - - - - - || CLICK EVENT || - - - - - - - - - - */
+/* - - - - - - - - - - || CHECK EVENT || - - - - - - - - - - */
 function checkTask() 
 {
     taskContainer.addEventListener("click", function (event) 
     {
         const target = event.target;
-        console.log(target);
 
-        // Check if the click is on the checkbox icon
-        if (target.classList.contains("task_checker")) 
+        // Check if the click is on the checkbox icon . . .
+        if (target.classList.contains("task_checker"))
         {
             const checkbox = target;
             const value = parseInt(checkbox.getAttribute("value"));
             console.log(value);
 
-            if (value === 0) 
+            // First and second click validation . . .
+            if (value === 0)
             {
-                increaseCounter();
+                increaseDoneCounter();
                 checkbox.textContent = "radio_button_checked";
                 checkbox.setAttribute("value", "1");
                 checkbox.closest(".task").classList.add("checked_task");
             }
             else
             {
-                decreaseCounter();
+                decreseDoneCounter();
                 checkbox.textContent = "radio_button_unchecked";
                 checkbox.setAttribute("value", "0");
                 checkbox.closest(".task").classList.remove("checked_task");
@@ -145,11 +172,22 @@ function deleteTask()
     });
 }
 
+/* - - - - - - - - - - || CLEAN EVENT || - - - - - - - - - - */
+cleanBtn.addEventListener("click", function()
+{
+    // While there's a child . . .
+    while (taskContainer.firstChild)
+    {
+        // Delete it . . .
+        taskContainer.removeChild(taskContainer.firstChild);
+    }
+});
+
 /* - - - - - - - - - - || ENTER EVENT || - - - - - - - - - - */
 addInput.addEventListener("keyup", (event) => 
 {
     // If [ENTER] is pressed so . . .
-    if (event.key === "Enter") 
+    if (event.key === "Enter")
     {
         // Print message on console . . .
         console.log('I´m pressing ENTER!!');
@@ -157,5 +195,4 @@ addInput.addEventListener("keyup", (event) =>
         // Execute function . . .
         addTask();
     }
-
 });

@@ -29,6 +29,8 @@
         <!-- Row -->
         <div class="row">
 
+            <img class="main_img" src="img/bg_img.svg" alt="">
+
             <!-- Column #001 // About Block -->
             <div class="col-md-6 column_001">
 
@@ -45,12 +47,7 @@
                         <p class="main_text">
                             
                             <!-- <div> Icon -->
-                            <span class="main_icon">
-                                
-                                <!-- (<) Icon && (>) Icon -->
-                                <iconify-icon icon="ep:arrow-left"></iconify-icon>div<iconify-icon icon="ep:arrow-right"></iconify-icon>
-
-                            </span>
+                            <span><img class="div_icon" src="img/div_icon.svg" alt=""></span>
 
                             <!-- First Text -->
                             <span class="title_text_v1">DEYBEAR</span><br>
@@ -59,12 +56,7 @@
                             <span class="title_text_v2">DEYBEAR</span>
 
                             <!-- <div> Icon -->
-                            <span class="main_icon">
-                                
-                                <!-- (<) Icon && (>) Icon -->
-                                <iconify-icon icon="ep:arrow-left"></iconify-icon>/div<iconify-icon icon="ep:arrow-right"></iconify-icon>
-
-                            </span>
+                            <span><img class="div_icon" src="img/div_icon.svg" alt=""></span>
 
 
                         </p>
@@ -84,7 +76,7 @@
                                 <i class="material-icons">add_circle</i>
 
                                 <!-- Status Number -->
-                                <div><p>Created</p><span>0</span></div>
+                                <div><p>Created</p><span id="made_counter">0</span></div>
 
                             </div>
 
@@ -95,7 +87,7 @@
                                 <i class="material-icons">check_circle</i>
 
                                 <!-- Status Number -->
-                                <div><p>Completed</p><span id="counter">0</span></div>
+                                <div><p>Completed</p><span id="done_counter">0</span></div>
 
                             </div>
 
@@ -117,7 +109,7 @@
                     <div class="add_container">
 
                         <!-- Task Input -->
-                        <input id="add_input" type="text" placeholder="Add new task">
+                        <input id="add_input" type="text" maxlength = "30" placeholder="Add new task . . .">
 
                         <!-- Task Buttom -->
                         <button id="add_btn" type="button" onclick="addTask();">+Add</button>
@@ -127,14 +119,26 @@
                     <!-- Task Container -->
                     <div id="task_container"></div>
 
-                    <!-- Clean Buttom -->
-                    <div id="clean_btn" class="col-sm-12 col-md-12 col-lg-12">
+                    <div class="row clean_container">
 
-                        <!-- Status Icon -->
-                        <i class="material-icons">remove_circle</i>
+                        <!-- Clean Buttom -->
+                        <div id="clean_btn" class="col-sm-12 col-md-12 col-lg-6">
 
-                        <!-- Status Number -->
-                        <div><p>Clean</p></div>
+                            <!-- Status Icon -->
+                            <i class="material-icons">remove_circle</i>
+
+                            <!-- Status Number -->
+                            <div><p>Clean</p></div>
+
+                        </div>
+
+                        <!-- Clean Message -->
+                        <div class="col-sm-12 col-md-12 col-lg-6 clean_message">
+
+                            <!-- Message -->
+                            <p>Be careful! If you press the clean button, all your tasks will be deleted!</p>
+
+                        </div>
 
                     </div>
 
@@ -149,9 +153,6 @@
     <!-- JavaScript -->
     <script src="js/to_do.js"></script>
     <script src="js/time.js"></script>
-
-    <!-- Iconofy -->
-    <script src="https://code.iconify.design/iconify-icon/1.0.8/iconify-icon.min.js"></script>
     
 </body>
 

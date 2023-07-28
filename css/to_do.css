@@ -19,6 +19,7 @@ body
     font-family: 'Poppins', sans-serif;
 }
 
+/* Reset row values */
 .row
 {
     margin: 0;
@@ -32,20 +33,30 @@ body
     padding: 0;
     height: 100vh;
     color: #212121;
-    background: #FFFFFF;
 
     display: flex;
     align-items: center;
     justify-content: end;
 }
 
+/* Green paint */
+.main_img
+{
+    top: -50px;
+    padding: 0;
+    width: 100%;
+    position: absolute;
+}
+
+/* White block */
 .about_block
 {
-    width: 80%;
+    width: 100%;
     height: 500px;
     padding: 30px;
 
     border-top-left-radius: 16px;
+    box-shadow: 0px 6px #212121;
     border-top: solid 2px #212121;
     border-bottom-left-radius: 16px;
     border-left: solid 2px #212121;
@@ -64,12 +75,13 @@ body
     color: #212121;
 }
 
-.main_icon
+/* <div> Icon */
+.div_icon
 {
-    font-size: 20px;
-    font-family: 'Source Code Pro', monospace;
+    width: 12%;
 }
 
+/* DEYBEAR (Black) */
 .title_text_v1
 {
     font-size: 60px;
@@ -78,6 +90,7 @@ body
     font-weight: 900;
 }
 
+/* DEYBEAR (Green) */
 .title_text_v2
 {
     font-size: 60px;
@@ -111,6 +124,7 @@ body
     justify-content: space-between;
 }
 
+/* Counter blocks */
 .status_block
 {
     display: flex;
@@ -146,20 +160,17 @@ body
 #clean_btn
 {
     display: flex;
-    color: #FFFFFF;
-    margin-top: 20px;
+    color: #212121;
     align-items: center;
     border-radius: 40px;
-    background: #212121;
-    border: solid 2px #FFFFFF;
+    background: #CFFF46;
     padding: 10px 15px 10px 10px;
-    box-shadow: 3px 3px #FFFFFF;
     justify-content: space-between;
 }
 
 #clean_btn i
 {
-    color: #FFFFFF;
+    color: #212121;
     margin-right: 10px;
 }
 
@@ -170,6 +181,20 @@ body
     font-weight: 700;
 }
 
+/* Buttom description */
+.clean_container
+{
+    display: flex;
+    margin-top: 20px;
+    align-items: center;
+}
+
+.clean_message p
+{
+    margin: 0;
+    font-size: 10px;
+}
+
 /* - - - - - - - - - - || COLUMN #002 && TASK BLOCK || - - - - - - - - - - */
 .column_002
 {
@@ -177,20 +202,31 @@ body
     padding: 0;
     height: 100vh;
     color: #FFFFFF;
-    background: #212121;
+
+    /*background: #212121;*/
+
+    
+    background: url(../img/bg_column.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    
 
     display: flex;
     align-items: center;
     justify-content: start;
 }
 
+/* Black block */
 .task_block
 {
-    width: 80%;
+    width: 100%;
     height: 500px;
     padding: 30px;
 
+    background: #212121;
     border-top-right-radius: 16px;
+    box-shadow: 0px 6px #FFFFFF;
     border-top: solid 2px #FFFFFF;
     border-bottom-right-radius: 16px;
     border-right: solid 2px #FFFFFF;
@@ -255,20 +291,26 @@ body
     border-radius: 24px;
     border: solid 2px #FFFFFF;
     padding: 20px 10px 20px 20px;
+
+    background: url(../img/bg_container.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
 }
 
+/* - - - - - || GENERATED TASK || - - - - - */
 .task
 {
     width: 100%;
     display: flex;
     padding: 10px;
     color: #212121;
+    font-weight: 700;
     align-items: center;
     border-radius: 50px;
-    flex-direction: row;
     margin-bottom: 20px;
-    font-weight: bolder;
     background: #FFFFFF;
+    flex-direction: row-reverse;
     justify-content: space-between;
 }
 
@@ -279,24 +321,43 @@ body
     flex-direction: row;
 }
 
+.task i
+{
+    cursor: pointer;
+}
+
 .task span p
 {
     margin: 0 0 0 15px;
 }
 
+/* Generated time */
+.task_time
+{
+    font-size: 14px;
+    font-weight: lighter;
+    color: rgb(33, 33, 33, .5);
+}
+
+/* - - - - - || CHECKED TASK || - - - - - */
 .checked_task
 {
     width: 100%;
     display: flex;
     padding: 10px;
     color: #212121;
+    font-weight: 700;
     align-items: center;
     border-radius: 50px;
-    flex-direction: row;
     margin-bottom: 20px;
-    font-weight: bolder;
     background: #CFFF46;
+    flex-direction: row-reverse;
     justify-content: space-between;
+}
+
+.checked_task i
+{
+    cursor: pointer;
 }
 
 /* - - - - - || SCROLLBAR || - - - - - */
@@ -313,29 +374,6 @@ body
 ::-webkit-scrollbar-thumb:hover
 {
     background: #555;
-}
-
-/* - - - - - || CHECKBOX && DELETE || - - - - - */
-#task_checker
-{
-    font-size: 25px;
-}
-
-#task_checker:hover
-{
-    cursor: pointer;
-}
-
-#delete_btn
-{
-    font-size: 25px;
-}
-
-#delete_btn:hover
-{
-    cursor: pointer;
-    transition: .5s;
-    color: #616161;
 }
 
 /* - - - - - - - - - - || RESPONSIVE BREAKPOINTS || - - - - - - - - - - */
@@ -355,7 +393,23 @@ body
 /* Medium devices (landscape tablets, 768px and up) */
 @media only screen and (min-width: 768px)
 {
+    /* Green paint */
+    .main_img
+    {
+        width: 50%;
+    }
 
+    /* White block */
+    .about_block
+    {
+        width: 90%;
+    }
+
+    /* Black block */
+    .task_block
+    {
+        width: 90%;
+    }
 }
 
 /* Large devices (laptops/desktops, 992px and up) */
@@ -376,4 +430,4 @@ body
     {
         width: 48%;
     }
-} 
+}
