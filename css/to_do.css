@@ -160,6 +160,7 @@ body
 #clean_btn
 {
     display: flex;
+    cursor: pointer;
     color: #212121;
     align-items: center;
     border-radius: 40px;
@@ -170,7 +171,6 @@ body
 
 #clean_btn i
 {
-    color: #212121;
     margin-right: 10px;
 }
 
@@ -179,6 +179,13 @@ body
     margin: 0;
     font-size: 16px;
     font-weight: 700;
+}
+
+#clean_btn:hover
+{
+    transition: .5s;
+    color: #FFFFFF;
+    background: #616161;
 }
 
 /* Buttom description */

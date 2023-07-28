@@ -29,7 +29,7 @@ function addTask()
     if(addInput.value === '')
     {
         // Calling an alert . . .
-        alert("Ingrese un texto");
+        alert("¡Please add a task first!");
     }
     else
     {
